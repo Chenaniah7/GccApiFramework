@@ -2,7 +2,7 @@ import pytest
 import json
 import requests
 from libraries.Environment import Env
-from operation.operationYaml import OperationYaml
+from common.operationYaml import OperationYaml
 
 yam = OperationYaml()
 url = yam.readYaml()['login']['url']

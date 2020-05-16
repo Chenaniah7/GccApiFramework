@@ -1,4 +1,4 @@
-from operation.operationYaml import OperationYaml
+from common.operationYaml import OperationYaml
 from core.rest_client import RestClient
 import yaml
 import json
