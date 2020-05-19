@@ -14,5 +14,5 @@ class OperationYaml:
             return yaml.safe_load(f)
 
 
-a = OperationYaml()
-print((a.readYaml())['test_env'])
+# a = OperationYaml()
+# print(type((a.readYaml())['test_env']['url']))
