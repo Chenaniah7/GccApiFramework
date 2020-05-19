@@ -80,7 +80,8 @@ class ProjectManageApi (RestClient):
         url = yam.readYaml()['change_project_status']['url']
         data = yam.readYaml()['change_project_status']['data']
         data['userId'] = self.userId
-        data = json.dumps(data)
+        print(data)
+        # data = json.dumps(data)
         return self.post(url=url, data=data)
 
     def get_project_list(self,**kwargs):
@@ -90,8 +91,5 @@ class ProjectManageApi (RestClient):
         return self.post(url=url, data=data)
 
 
-
-
-
-# a = ProjectManageApi ()
-# print (a.get_project_record().json())
+a = ProjectManageApi ('www','eee','rrr')
+print (a.change_project_status().json())

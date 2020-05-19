@@ -9,6 +9,5 @@ class Gcw:
 
 
 
-# token = obj.get_userid_token ()['Data']['Token']
-# a = Gcw (token=token)
-# print (a.projectApi.get_project_record ().json())
+a = Gcw (token=token)
+print (a.projectApi.get_project_record ().json())

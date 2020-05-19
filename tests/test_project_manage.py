@@ -7,7 +7,7 @@ from api_runner import Gcw
 
 
 def test_save_project_record(env):
-    r =env.apiRunner.projectApi.get_project_record()
+    r =env.apiRunner.projectApi.save_project_record()
     assert r.json()['Code'] == 1, "Code should be 1 but actually is {}".format (r.json ()['Code'])
 
 
