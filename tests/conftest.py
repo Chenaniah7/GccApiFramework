@@ -6,7 +6,7 @@ from common.operationYaml import OperationYaml
 
 yam = OperationYaml()
 url = yam.readYaml()['login']['url']
-data = json.dumps (yam.readYaml ()['login']['data'])
+data = json.dumps(yam.readYaml()['login']['data'])
 headers= {"Content-Type": "application/json"}
 
 
@@ -20,7 +20,8 @@ def env():
     # print(r.json())
     token = r.json()['Data']['Token']
     userId = r.json()['Data']['User']['UserId']
-    yield Env(token=token, userId=userId)
+    base_url = yam.readYaml()['test_env']['base_url']
+    yield Env(token=token, userId=userId, base_url=base_url)
 
 
 

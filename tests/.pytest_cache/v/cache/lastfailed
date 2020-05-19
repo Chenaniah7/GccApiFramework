@@ -1,1 +1,4 @@
-{}
+{
+  "test_project_manage.py::test_change_peoject_status": true,
+  "test_project_manage.py::test_get_project_list": true
+}
