@@ -25,6 +25,7 @@ def test_get_project_record(env):
 def test_save_project_daily_plan(env):
     r = env.apiRunner.projectApi.save_project_daily_plan()
     assert r.status_code == 200
+    assert r.json()['Code'] == 1
 
 
 def test_get_project_daily_plan(env):

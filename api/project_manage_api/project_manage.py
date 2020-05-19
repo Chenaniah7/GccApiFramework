@@ -18,7 +18,6 @@ class ProjectManageApi (RestClient):
         """保存项目记录，form-data格式不上传文件"""
         url = yam.readYaml()['save_project_record']['url']
         data = yam.readYaml()['save_project_record']['data']
-        data['userId'] = self.userId
         headers = {"Authorization": self.token, "Content-Type": "multipart/form-data; "
                                                                 "boundary"
                                                                 "=--------------------------137982354432402379816339"}
@@ -31,7 +30,6 @@ class ProjectManageApi (RestClient):
         """ 保存项目记录，form-data格式，带文件上传 """
         url = yam.readYaml ()['save_project_record2']['url']
         data = yam.readYaml()['save_project_record']['data']
-        data['userId'] = self.userId
         headers = {"Authorization": self.token, "Content-Type": "multipart/form-data; "
                                                                 "boundary"
                                                                 "=--------------------------137982354432402379816339"}
@@ -44,7 +42,6 @@ class ProjectManageApi (RestClient):
         """获取项目记录"""
         url = yam.readYaml()['get_project_record']['url']
         data = yam.readYaml()['get_project_record']['data']
-        data['userId'] = self.userId
         # data['userId'] = self.userId
         # headers = {"Authorization": self.auth, "Content-Type": "application/json"}
         data = json.dumps(data)
@@ -54,7 +51,6 @@ class ProjectManageApi (RestClient):
         """保存项目工作计划，form-data格式"""
         url = yam.readYaml()['save_project_daily_plan']['url']
         data =yam.readYaml()['save_project_daily_plan']['data']
-        data['userId'] = self.userId
         headers = {"Authorization": self.token, "Content-Type": "multipart/form-data; "
                                                                 "boundary=--------------------------006127840766512240517173"}
         form_data = pbc.change_type(data=data, headers=headers)
@@ -63,24 +59,20 @@ class ProjectManageApi (RestClient):
     def get_project_daily_plan(self,**kwargs):
         """获取项目工作计划"""
         data = yam.readYaml()['get_project_daily_plan']['data']
-        data['userId'] = self.userId
         data = json.dumps(data)
         url = yam.readYaml()['get_project_daily_plan']['url']
         return self.post(url=url, data=data)
 
     def get_project_examination_record(self,**kwargs):
         """获取项目考核情况"""
-        data = yam.readYaml()['get_project_examination_record']['data']
-        data['userId'] = self.userId
+        data = json.dumps(yam.readYaml()['get_project_examination_record']['data'])
         url = yam.readYaml()['get_project_examination_record']['url']
         return self.post(url=url, data=data)
 
     def change_project_status(self,**kwargs):
         """更改项目状态"""
         url = yam.readYaml()['change_project_status']['url']
-        data = yam.readYaml()['change_project_status']['data']
-        data['userId'] = self.userId
-        print(data)
+        data = json.dumps(yam.readYaml()['change_project_status']['data'])
         # data = json.dumps(data)
         return self.post(url=url, data=data)
 
@@ -90,6 +82,11 @@ class ProjectManageApi (RestClient):
         data = yam.readYaml()['get_project_list']['data']
         return self.post(url=url, data=data)
 
+    # def delete_project_record(self,**kwargs):
+    #     """删除项目记录"""
+    #     url = yam.readYaml()['delete_project_record']['url']
+    #     data = json.dumps(yam.readYaml()['delete_project_record']['data'])
+    #
 
-a = ProjectManageApi ('www','eee','rrr')
-print (a.change_project_status().json())
+
+

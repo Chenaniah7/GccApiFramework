@@ -4,14 +4,10 @@ import requests
 
 class RestClient:
 
-    def __init__(self, token, userId, base_url, **kwargs):
-        self.base_url = base_url
+    def __init__(self,token, **kwargs):
         self.s = requests.Session()
         self.token = token
         self.s.headers = {"Authorization": token, "Content-Type": "application/json"}
-        self.userId = userId
-        # self.s.params.update({"userId": "6951fef6-ec1b-43d7-ac53-6c74d074be7d",
-        #                       "sysProjectID": "9f3c0ca6-35cc-4337-af57-904bfc5b6a53"})
 
     def get(self, url, **kwargs):
         return self.request(url, "get", **kwargs)
@@ -26,7 +22,7 @@ class RestClient:
         return self.request(url, "delete", **kwargs)
 
     def request(self, url, method_name, **kwargs):
-        url = self.base_url + url
+        # url = self.base_url + url
         if method_name == "get":
             return self.s.get(url, **kwargs)
         if method_name == "post":

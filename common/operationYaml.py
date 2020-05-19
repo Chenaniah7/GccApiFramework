@@ -13,6 +13,3 @@ class OperationYaml:
         with open(pb.filepath(filedir=filedir, filename=filename), 'r', encoding='utf-8') as f:
             return yaml.safe_load(f)
 
-
-# a = OperationYaml()
-# print(type((a.readYaml())['test_env']['url']))

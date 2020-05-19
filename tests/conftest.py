@@ -10,7 +10,7 @@ data = json.dumps(yam.readYaml()['login']['data'])
 headers= {"Content-Type": "application/json"}
 
 
-@pytest.fixture(scope="function")
+@pytest.fixture(scope="module")
 def env():
     s=requests.Session()
     # s.params.update({"userId": "6951fef6-ec1b-43d7-ac53-6c74d074be7d",
@@ -20,8 +20,7 @@ def env():
     # print(r.json())
     token = r.json()['Data']['Token']
     userId = r.json()['Data']['User']['UserId']
-    base_url = yam.readYaml()['test_env']['base_url']
-    yield Env(token=token, userId=userId, base_url=base_url)
+    yield Env(token=token)
 
 
 
