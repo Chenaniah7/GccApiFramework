@@ -1,4 +1,10 @@
 [
+  "test_project_manage.py::test_save_project_record",
+  "test_project_manage.py::test_save_project_record_file",
+  "test_project_manage.py::test_get_project_record",
+  "test_project_manage.py::test_save_project_daily_plan",
+  "test_project_manage.py::test_get_project_daily_plan",
+  "test_project_manage.py::test_get_project_examination_record",
   "test_project_manage.py::test_change_peoject_status",
   "test_project_manage.py::test_get_project_list"
 ]

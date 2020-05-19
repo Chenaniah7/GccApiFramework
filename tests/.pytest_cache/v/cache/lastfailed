@@ -1,4 +1,9 @@
 {
   "test_project_manage.py::test_change_peoject_status": true,
-  "test_project_manage.py::test_get_project_list": true
+  "test_project_manage.py::test_get_project_daily_plan": true,
+  "test_project_manage.py::test_get_project_examination_record": true,
+  "test_project_manage.py::test_get_project_record": true,
+  "test_project_manage.py::test_save_project_daily_plan": true,
+  "test_project_manage.py::test_save_project_record": true,
+  "test_project_manage.py::test_save_project_record_file": true
 }
