@@ -1,8 +1,10 @@
-#测试环境和数据
-test_env:
-  sysProjectID: 9f3c0ca6-35cc-4337-af57-904bfc5b6a53
-  userId: 6951fef6-ec1b-43d7-ac53-6c74d074be7d
-  api_root_url: http://113.108.203.26:6242
+##测试环境和数据
+#test_env:
+#  sysProjectID: 9f3c0ca6-35cc-4337-af57-904bfc5b6a53
+#  userId: 6951fef6-ec1b-43d7-ac53-6c74d074be7d
+
+env:
+  base_url: http://113.108.203.26:6242
 
 #登录
 login:
