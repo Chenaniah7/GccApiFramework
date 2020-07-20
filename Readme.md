@@ -1,12 +1,17 @@
-简介：      
-  api：   封装好的接口，可以直接调用  
-  common：存放一些框架得公共方法，如：将json数据转换成form-data，操作yaml文档等方法  
-  core：  框架核心，封装了requests方法  
-  data：  管理测试数据，暂时用yaml文件管理，后续会更新excel    
-  libraries: 放一些公共库  
-  reports： 存放测试报告，目前框架使用html报告  
-  tests：   存放测试用例，可在此目录下直接执行用例  
+简介：    
+  GcwApi:这个python包下面放一些封装好的的接口和方法
+  
+     api：   封装好的接口，可以直接调用   
+     core：  框架核心，封装了requests方法 
+     
+  GcwApiTest： 调用GcwApi中的接口和方法
+  
+     api_test: 单个接口测试
+     data:     存放数据，如测试环境的地址
+     libraries: 放一些测试库  
+     reports： 存放测试报告 
+     senario_test： 多个接口组成的基于场景的测试  
   
   
   
-框架会持续更新优化。。  
+框架持续更新优化。。  
