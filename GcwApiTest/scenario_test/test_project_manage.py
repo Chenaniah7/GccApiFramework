@@ -3,8 +3,8 @@ import pytest, os
 from api.base import ProjectFunction
 import allure_pytest, allure
 
-account = 'test'
-password = 'zxc123456'
+account = 'xxx'
+password = 'xxxxxxx'
 obj = ProjectFunction ()
 token = obj.login (account, password).json ()['Data']['Token']
 headers = {
@@ -117,4 +117,4 @@ def test_get_project_list(env):
 
 
 if __name__ == '__main__':
-    pytest.main(['-m smpke','--html=reports/report.html'])
+    pytest.main(['-m smoke','--html=reports/report.html'])
