@@ -4,10 +4,13 @@ import requests
 
 class RestClient:
 
-    def __init__(self,base_url,**kwargs):
+    def __init__(self, base_url, userId, token, **kwargs):
         self.base_url = base_url
+        self.userId = userId
+        self.token = token
         self.session = requests.Session()
-        self.session.headers = {"Content-Type": "application/json"}
+        self.data = {"userId": self.userId}
+        self.session.headers = {"Authorization": self.token, "Content-Type": "application/json"}
 
     def get(self, url, **kwargs):
         return self.request(url, "get", **kwargs)
