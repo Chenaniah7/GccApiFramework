@@ -5,7 +5,7 @@ from api.base import ProjectFunction
 
 obj = ProjectFunction()
 account = 'test'
-password = 'zxc123456'
+password = 'xxxxxxx'
 
 
 @pytest.fixture(scope="module")
